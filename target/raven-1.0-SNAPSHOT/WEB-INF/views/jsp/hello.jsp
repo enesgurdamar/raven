@@ -11,26 +11,7 @@
     <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
     <link href="${bootstrapCss}" rel="stylesheet" />
     <link href="${coreCss}" rel="stylesheet" />
-
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even){background-color: #f2f2f2}
-
-        th {
-            background-color: #428bca;
-            color: white;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="/resources/core/css/hello.css">
 
 </head>
 
@@ -59,24 +40,30 @@
         </p>
         <p>
             <a class="btn btn-primary btn-lg" role="button" id="list">List Users</a>
-            <a class="btn btn-primary btn-lg" onclick="document.getElementById('demo').innerHTML=Date()">Date</a>
-            <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-            <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
+            <a class="btn btn-primary btn-lg" onclick="getElementById('add').style.display='block'">Add User</a>
         </p>
+
+        <div id="add" style="display:none" class="container">
+
+            <form method="post" action="signup">
+                <input type="text" placeholder="Username" name="username" maxlength="20"/><br />
+                <input type="password" placeholder="Password" name="password" maxlength="20"/><br />
+                <input type="email" name="email" placeholder="E-Mail" maxlength="60"/><br />
+                <input type="submit" value="Sign Up" />
+            </form>
+
+        </div>
     </div>
+
 </div>
-
-    <p id="demo"></p>
-
-    <hr>
 
         <table id="excelDataTable"></table>
 
-    <hr>
-
+    <br>
     <footer>
         <p>&#169 Enderun 2016</p>
     </footer>
+
 </div>
 
 <spring:url value="/resources/core/css/hello.js" var="coreJs" />

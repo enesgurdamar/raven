@@ -7,11 +7,12 @@ var myList;
 $(document).ready(function() {
     $("#list").click(function () {
         if ($('#excelDataTable').find('td').length == 0){
-        $.ajax({url: "/hello", success: function(result){
-            myList = result;
-            buildHtmlTable('#excelDataTable');
-        }});
-    }})
+            $.ajax({url: "/hello", success: function(result){
+                myList = result;
+                buildHtmlTable('#excelDataTable');
+            }});
+        }
+    })
 });
 
 function buildHtmlTable(selector) {
